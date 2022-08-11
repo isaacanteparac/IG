@@ -7,10 +7,8 @@ const { database } = require("./keys");
 const BodyParser = require("body-parser");
 
 
-
-
-//const user = require("./src/routes/register/user");
-//const userAuth = require("./src/routes/auth/user");
+const userRegister = require("./src/auth/router/userView");
+const userAuth = require("./src/auth/router/userLogin");
 
 
 const app = express();
@@ -57,15 +55,16 @@ app.use(morgan("dev"));
 
 //ROUTES
 
-//app.use("/i/users", user);
-//#app.use("/i/users/auth", userAuth);
+app.use("/i/user/view", userRegister);
+app.use("/i/user/auth", userAuth);
 
 
 
 //STARTING THE SERVER
 async function main() {
   await app.listen(app.get("port"));
-  console.log("ON PORT " + app.get("port"));
+
+  console.log(""+app.get("port"));
 }
 
 main();
