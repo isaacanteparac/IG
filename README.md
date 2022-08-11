@@ -16,10 +16,11 @@
         "mysql2": "^2.3.3",
         "nodemon": "^2.0.19",
         "passport": "^0.6.0"
-    }
-
-
-
+    },
+    "devDependencies": {
+        "mysql2": "^2.3.3",
+        "nodemon": "^2.0.19"
+    },
 
 **FRONTEND**
     
