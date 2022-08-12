@@ -81,9 +81,9 @@ export default function UserRegister(props) {
             <Label trasnparent>{textChange.txtChange}</Label>
           </Content>
           <Content btnlogin>
-            <Button trasnparent >
-              <A   href={url} > {textChange.btnChange} </A >
-            </Button>
+
+              <A transparent href={url} > {textChange.btnChange} </A>
+  
           </Content>
         </ContentRight>
         <ContentLeftColumn titleLogin>
