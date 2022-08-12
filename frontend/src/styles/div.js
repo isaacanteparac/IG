@@ -21,6 +21,13 @@ export const ContentCenter = styled.div`
       float: left;
       background-color: transparent;
     `}
+
+  ${(props) =>
+    props.btnRegsiter &&
+    css`
+      width: 65%;
+      margin-top: 10px;
+    `}
 `;
 
 export const ContentColumnCenter = styled.div`
@@ -28,23 +35,41 @@ export const ContentColumnCenter = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  ${(props) =>
+    props.login &&
+    css`
+      width: 45%;
+      margin-left: 10px;
+    `}
 `;
 
 export const ContentColumn = styled.div`
   display: flex;
   flex-direction: column;
-
-  ${(props) =>
-    props.login &&
-    css`
-      width: 50%;
-    `}
 `;
 
 export const ContentLeft = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: left;
+
+  ${(props) =>
+    props.login &&
+    css`
+      width: 75%;
+      position: relative;
+      top: 40px;
+      height: 30px;
+    `}
+`;
+
+export const ContentRight = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: right;
+
+  ${(props) => props.account && css``}
 `;
 
 export const ContentLeftColumn = styled.div`
@@ -52,19 +77,46 @@ export const ContentLeftColumn = styled.div`
   align-items: flex-start;
   justify-content: left;
   flex-direction: column;
-`;
 
-export const ContentLabeInput = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: left;
-  flex-direction: column;
   ${(props) =>
     props.login &&
     css`
       width: 70%;
-      padding: 5px;
-      margin: auto;
-      margin-bottom: 5px;
+      margin: 10px 0;
+    `}
+  ${(props) =>
+    props.titleLogin &&
+    css`
+      margin-bottom: 10px;
+      width: 75%;
+    `}
+`;
+
+export const Form = styled.form`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  ${(props) =>
+    props.login &&
+    css`
+      width: 100%;
+      margin-left: 10px;
+    `}
+`;
+
+export const Content = styled.div`
+  margin: 0;
+  padding: 0;
+
+  ${(props) =>
+    props.iconLogin &&
+    css`
+      position: relative;
+      bottom: 5px;
+      left: 30px;
     `}
 `;
