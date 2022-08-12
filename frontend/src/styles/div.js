@@ -41,6 +41,7 @@ export const ContentColumnCenter = styled.div`
     css`
       width: 45%;
       margin-left: 10px;
+      padding-top: 25px;
     `}
 `;
 
@@ -69,7 +70,10 @@ export const ContentRight = styled.div`
   align-items: flex-start;
   justify-content: right;
 
-  ${(props) => props.account && css``}
+  ${(props) => props.account && css`
+  width: 75%;
+  height: 40px;
+  `}
 `;
 
 export const ContentLeftColumn = styled.div`
@@ -113,10 +117,17 @@ export const Content = styled.div`
   padding: 0;
 
   ${(props) =>
-    props.iconLogin &&
+    props.btnCreateAccount &&
     css`
       position: relative;
       bottom: 5px;
-      left: 30px;
+      left: 5px;
+    `}
+
+  ${(props) =>
+    props.btnlogin &&
+    css`
+      position: relative;
+      left: 10px;
     `}
 `;

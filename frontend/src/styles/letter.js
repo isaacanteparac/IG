@@ -34,7 +34,11 @@ export const H2 = styled.h1`
   ${(props) =>
     props.login &&
     css`
-      color: black;
+      color: #c600ff;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     `}
+`;
+
+export const A  = styled.a`
+text-decoration: none
 `;

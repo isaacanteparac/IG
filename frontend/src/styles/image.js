@@ -9,9 +9,10 @@ export const ContentImg = styled.div`
     css`
       width: 50%;
       height: auto;
-      margin-top: 20px;
+      position: relative;
+      top: 45px;
       overflow: hidden;
-      background-image: radial-gradient(
+      /*background-image: radial-gradient(
         circle at 50% -20.71%,
         #ffffa1 0,
         #f5ffa0 6.25%,
@@ -30,9 +31,11 @@ export const ContentImg = styled.div`
         #00d7f5 87.5%,
         #00d3ff 93.75%,
         #00d0ff 100%
-      );
+      );*/
+      background-image: radial-gradient(circle at 15.91% 9.37%, #ff00ff 0, #ff00ff 16.67%, #f600ff 33.33%, #bf00ff 50%, #8618ed 66.67%, #4721db 83.33%, #0025cb 100%);
+
       box-shadow: 4px 4px 4px 5px #c5c5c5;
-      border-radius: 20px;
+      border-radius: 40px;
       padding: 5px;
     `}
 `;

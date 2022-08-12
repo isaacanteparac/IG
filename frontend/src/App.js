@@ -1,12 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-import UserRegister from './components/UserRegister';
+import {Context} from "./auth/Context";
+import AppRouter from './router/AppRouter';
 
 function App() {
   return (
     <div>
-      <UserRegister/>
+     <Context>
+        <AppRouter/>
+      </Context>
     </div>
   );
 }
