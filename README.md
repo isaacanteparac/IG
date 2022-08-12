@@ -31,3 +31,7 @@
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
     }
+ **SCREENSHOT**
+  ![Captura de pantalla (55)](https://user-images.githubusercontent.com/69361351/184448387-eb559572-c974-4b9e-b81b-94a79aa4822a.png)
+
+  ![Captura de pantalla (54)](https://user-images.githubusercontent.com/69361351/184448393-3ed4c193-2760-4572-b097-c12d2a78de8a.png)
