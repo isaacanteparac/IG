@@ -1,6 +1,5 @@
 
 import './App.css';
-
 import {Context} from "./auth/Context";
 import AppRouter from './router/AppRouter';
 

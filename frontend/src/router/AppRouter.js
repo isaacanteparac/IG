@@ -15,7 +15,7 @@ export default function AppRouter() {
       <div>
         <Routes>
           <Route
-            path="/*"
+            path="/i/*"
             element={
               <Public>
                 <NoAuth />
@@ -24,7 +24,7 @@ export default function AppRouter() {
           />
 
           <Route
-            path="/i/*"
+            path="/*"
             element={
               <Private>
                 <Navigation/>

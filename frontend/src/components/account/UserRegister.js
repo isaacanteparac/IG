@@ -44,10 +44,8 @@ export default function UserRegister(props) {
         account: "Create account with",
         imageHe: false,
         imageShe: true,
-
-
-
       });
+      
     } else {
       setViewSingUp(false);
       setViewLogin(true);
@@ -58,9 +56,8 @@ export default function UserRegister(props) {
         account: "Log in with",
         imageShe: false,
         imageHe: true,
-
-
       });
+
     }
   };
 

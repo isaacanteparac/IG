@@ -1,5 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
 export default function Navigation() {
-  return <div>Navigation</div>;
+  return (
+    <div>
+      <h1>hola mundo</h1>
+    </div>
+  );
 }
