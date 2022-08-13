@@ -16,7 +16,7 @@ export default function SingUp() {
   const { sign_up } = useContext(AuthContext);
 
   const createUser = async () => {
-    sign_up(name, lastname, email, nickname, password);
+    await sign_up(name, lastname, email, nickname, password);
   };
 
   return (

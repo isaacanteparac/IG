@@ -10,5 +10,5 @@ CREATE TABLE message (
     delete_ timestamp NOT NULL DEFAULT current_timestamp,
     PRIMARY KEY (id),
     FOREIGN KEY (id_user) REFERENCES users(id),
-    FOREIGN KEY (id_chat) REFERENCES chat(id),
+    FOREIGN KEY (id_chat) REFERENCES chat(id)
 );
