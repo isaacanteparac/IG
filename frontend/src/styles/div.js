@@ -25,7 +25,9 @@ export const ContentCenter = styled.div`
   ${(props) =>
     props.btnRegsiter &&
     css`
-      width: 65%;
+      width: 64%;
+      position: relative;
+      right: 20px;
       margin-top: 10px;
     `}
 `;

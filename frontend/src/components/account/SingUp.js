@@ -26,7 +26,7 @@ export default function SingUp() {
         <Input
           registerAccount
           type="text"
-          placeholder="Isaac"
+          placeholder="Real name"
           name="name"
           onChange={(e) => {
             setName(e.target.value);
@@ -38,7 +38,7 @@ export default function SingUp() {
         <Input
           registerAccount
           type="text"
-          placeholder="Antepara"
+          placeholder="Real surname"
           name="lastname"
           onChange={(e) => {
             setLastname(e.target.value);

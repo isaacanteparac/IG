@@ -4,9 +4,8 @@ export const Button = styled.button`
   ${(props) =>
     props.regsiter &&
     css`
-      width: 70%;
+      width: 90%;
       height: 50px;
-
       border-radius: 20px;
       font-weight: 600;
       text-align: center;
