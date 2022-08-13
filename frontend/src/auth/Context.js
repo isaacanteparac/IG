@@ -11,8 +11,8 @@ export const Context = ({ children }) => {
 
   const [auth, setAuth] = useState(initial);
 
-  const login = async (email, password) => {
-    const data = { email, password };
+  const login = async (nickname, password) => {
+    const data = { nickname, password };
     const resp = await notoken("user/auth/verification", data);
     if (resp.ok) {
       localStorage.setItem("token", resp.token);

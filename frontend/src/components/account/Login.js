@@ -7,26 +7,26 @@ import { Button } from "../../styles/button";
 import { AuthContext } from "../../auth/Context";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
 
   const verifyingUser = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    await login(nickname, password);
   }
 
   return (
     <Form login onSubmit={verifyingUser}>
       <ContentLeftColumn login>
-        <Label registerAccount>email</Label>
+        <Label registerAccount>Nickname</Label>
         <Input
           registerAccount
           type="text"
-          placeholder="holamundo@emial.com"
-          name="email"
+          placeholder="hola652"
+          name="nickname"
           onChange={(e) => {
-            setEmail(e.target.value);
+            setNickname(e.target.value);
           }}
         />
       </ContentLeftColumn>

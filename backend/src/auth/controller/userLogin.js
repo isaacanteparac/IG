@@ -4,10 +4,10 @@ const db = require("../../../database");
 const userAuth = {};
 
 userAuth.login = async (req, res) => {
-  const { email, password } = req.body;
+  const { nickname, password } = req.body;
 
-  const dataUser = await db.query("SELECT * FROM users WHERE email = ?", [
-    email,
+  const dataUser = await db.query("SELECT * FROM users WHERE nickname = ?", [
+    nickname,
   ]);
   try {
     if (dataUser.length > 0) {
