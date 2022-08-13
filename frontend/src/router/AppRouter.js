@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import NoAuth from "./NoAuth";
-//import YesAuth from "./YesAuth";
 import Public from "./Public";
 import Private from "./Private";
 
