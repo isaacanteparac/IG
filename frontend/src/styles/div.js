@@ -19,7 +19,7 @@ export const ContentCenter = styled.div`
       margin: auto;
       width: 100%;
       float: left;
-      background-color: transparent;
+      background-color: #fff;
     `}
 
   ${(props) =>
@@ -29,6 +29,21 @@ export const ContentCenter = styled.div`
       position: relative;
       right: 20px;
       margin-top: 10px;
+    `}
+
+  ${(props) =>
+    props.noCopy &&
+    css`
+     -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    `}
+  ${(props) =>
+    props.inf_follower &&
+    css`
+      margin-top: 20px;
+
     `}
 `;
 
@@ -44,6 +59,22 @@ export const ContentColumnCenter = styled.div`
       width: 45%;
       margin-left: 10px;
       padding-top: 25px;
+    `}
+  ${(props) =>
+    props.noCopy &&
+    css`
+     -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    `}
+  ${(props) =>
+    props.inf_follower &&
+    css`
+      width: 30%;
+      margin: 10px 3px;
+      padding: 3px;
+      border-radius: 10px;
     `}
 `;
 
@@ -65,6 +96,33 @@ export const ContentLeft = styled.div`
       top: 40px;
       height: 30px;
     `}
+
+    ${(props) =>
+    props.noCopy &&
+    css`
+     -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    `}
+
+  ${(props) =>
+    props.options &&
+    css`
+
+      height: 30px;
+      margin: 5px auto;
+      padding-top: 10px;
+      padding-left: 5px;
+      width: 85%;
+      border-radius: 10px;
+
+     
+
+      &:active {
+        box-shadow: 3px 3px 3px 4px #c5c5c5;
+      }
+    `}
 `;
 
 export const ContentRight = styled.div`
@@ -72,10 +130,12 @@ export const ContentRight = styled.div`
   align-items: flex-start;
   justify-content: right;
 
-  ${(props) => props.account && css`
-  width: 75%;
-  height: 40px;
-  `}
+  ${(props) =>
+    props.account &&
+    css`
+      width: 75%;
+      height: 40px;
+    `}
 `;
 
 export const ContentLeftColumn = styled.div`
@@ -119,6 +179,15 @@ export const Content = styled.div`
   padding: 0;
 
   ${(props) =>
+    props.noCopy &&
+    css`
+     -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    `}
+
+  ${(props) =>
     props.btnCreateAccount &&
     css`
       position: relative;
@@ -131,5 +200,40 @@ export const Content = styled.div`
     css`
       position: relative;
       left: 10px;
+    `}
+  
+  ${(props) =>
+    props.home &&
+    css`
+      margin: auto;
+      width: 100%;
+      background-color: red;
+      
+    `}
+
+  ${(props) =>
+    props.menu &&
+    css`
+      background-color: #f9f9f9;
+      width: 18%;
+      height: 100%;
+      float: left;
+      position: fixed;
+      padding: 10px;
+    `}
+
+  ${(props) =>
+    props.main &&
+    css`
+      background-color: #fff;
+      width: 79%;
+      height: 765px;
+      padding: 10px 5px;
+      border: 1px solid #e0e0e0;
+      border-radius: 30px;
+      float: left;
+      position: relative;
+      left: 20%;
+      margin-top: 2px;
     `}
 `;

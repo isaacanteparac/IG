@@ -32,10 +32,27 @@ export const ContentImg = styled.div`
         #00d3ff 93.75%,
         #00d0ff 100%
       );*/
-      background-image: radial-gradient(circle at 15.91% 9.37%, #ff00ff 0, #ff00ff 16.67%, #f600ff 33.33%, #bf00ff 50%, #8618ed 66.67%, #4721db 83.33%, #0025cb 100%);
+      background-image: radial-gradient(
+        circle at 15.91% 9.37%,
+        #ff00ff 0,
+        #ff00ff 16.67%,
+        #f600ff 33.33%,
+        #bf00ff 50%,
+        #8618ed 66.67%,
+        #4721db 83.33%,
+        #0025cb 100%
+      );
 
       box-shadow: 4px 4px 4px 5px #c5c5c5;
       border-radius: 40px;
+      padding: 5px;
+    `}
+
+    ${(props) =>
+    props.photoProfile &&
+    css`
+      margin: auto;
+      width: 95%;
       padding: 5px;
     `}
 `;
@@ -59,5 +76,18 @@ export const Img = styled.img`
       display: flex;
       align-items: center;
       justify-content: center;
+    `}
+
+  
+    ${(props) =>
+    props.photoProfile &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      width: 120px;
+      border-radius: 60px;
+
     `}
 `;

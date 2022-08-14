@@ -26,6 +26,45 @@ export const Label = styled.label`
     css`
       color: #aaaabb;
     `}
+
+  ${(props) =>
+    props.blod &&
+    css`
+      color: #000;
+      font-weight: 600;
+    `}
+
+  ${(props) =>
+    props.trasnparentNicknameBig &&
+    css`
+      color: #aaaabb;
+      font-size: 17px;
+      margin: 5px 0;
+    `}
+  
+    ${(props) =>
+    props.trasnparentNameBig &&
+    css`
+      color: #000;
+      font-size: 20px;
+      font-weight: bolder;
+    `}
+
+  ${(props) =>
+    props.nameApp &&
+    css`
+      font-weight: 600;
+      font-size: 23px;
+      text-transform: capitalize;
+    `}
+  
+  ${(props) =>
+    props.options &&
+    css`
+      font-family: 'Segoe UI';
+      font-family: 18px;
+      margin-left: 20px;
+    `}
 `;
 
 export const H2 = styled.h1`
