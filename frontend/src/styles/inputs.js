@@ -17,4 +17,20 @@ export const Input = styled.input`
     }
   `}
 
+  ${(props) =>
+    props.search &&
+    css`
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    color: #000;
+    background-color: transparent;
+
+    &::placeholder{
+        color:#808eff;
+    }
+  `}
+
 `;

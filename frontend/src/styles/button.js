@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
 export const Button = styled.button`
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${(props) =>
     props.regsiter &&
     css`
@@ -12,12 +19,12 @@ export const Button = styled.button`
       text-transform: capitalize;
       border: none;
       font-size: 20px;
-      background-color: #9213F1;
+      background-color: #9213f1;
       color: #fff;
       box-shadow: 4px 4px 4px #aaaabb;
 
       &:active {
-        background-color: #B206FB;
+        background-color: #b206fb;
       }
     `}
 
@@ -53,6 +60,42 @@ export const Button = styled.button`
       padding: 5px 10px;
       &:active {
         border: 2px solid #905eff;
+      }
+    `}
+
+      
+    ${(props) =>
+    props.addPhoto &&
+    css`
+      width: auto;
+      height: 40px;
+      border-radius: 10px;
+      text-align: center;
+      border: none;
+      float: right;
+      position: relative;
+      bottom: 40px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 5px 10px;
+      background-image: radial-gradient(
+        circle at 120.71% 50%,
+        #f1d8ff 0,
+        #c1b2ff 25%,
+        #808dff 50%,
+        #006df2 75%,
+        #0054e5 100%
+      );
+      &:active {
+        background-image: radial-gradient(
+          circle at -20.44% 43.84%,
+          #f1d8ff 0,
+          #c1b2ff 25%,
+          #808dff 50%,
+          #006df2 75%,
+          #0054e5 100%
+        );
       }
     `}
 `;

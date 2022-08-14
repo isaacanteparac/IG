@@ -4,6 +4,10 @@ export const ContentImg = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   ${(props) =>
     props.login &&
     css`
@@ -12,26 +16,6 @@ export const ContentImg = styled.div`
       position: relative;
       top: 45px;
       overflow: hidden;
-      /*background-image: radial-gradient(
-        circle at 50% -20.71%,
-        #ffffa1 0,
-        #f5ffa0 6.25%,
-        #e4ffa0 12.5%,
-        #d2ffa1 18.75%,
-        #bdffa3 25%,
-        #a7fda6 31.25%,
-        #8cfaaa 37.5%,
-        #6cf7af 43.75%,
-        #3cf2b5 50%,
-        #00edbc 56.25%,
-        #00e8c6 62.5%,
-        #00e4d0 68.75%,
-        #00dfdc 75%,
-        #00dbe9 81.25%,
-        #00d7f5 87.5%,
-        #00d3ff 93.75%,
-        #00d0ff 100%
-      );*/
       background-image: radial-gradient(
         circle at 15.91% 9.37%,
         #ff00ff 0,
@@ -54,6 +38,31 @@ export const ContentImg = styled.div`
       margin: auto;
       width: 95%;
       padding: 5px;
+    `}
+
+    ${(props) =>
+    props.history &&
+    css`
+      margin: auto;
+      width: 65px;
+      height: 65px;
+      padding: 5px;
+      margin: 0 3px;
+    `}
+
+    ${(props) =>
+    props.post &&
+    css`
+      width: 100%;
+      overflow: hidden;
+    `}
+
+    ${(props) =>
+    props.photoUser &&
+    css`
+      margin: 0 5px;
+      width: 40px;
+      overflow: hidden;
     `}
 `;
 
@@ -89,5 +98,36 @@ export const Img = styled.img`
       width: 120px;
       border-radius: 60px;
 
+    `}
+
+    ${(props) =>
+    props.history &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      width: 60px;
+      border-radius: 30px;
+      padding: 1px;
+      border: 3px solid #0057E7;
+    `}
+
+    ${(props) =>
+    props.post &&
+    css`
+      margin: auto;
+      width: 100%;
+      border-radius: 30px;
+
+    `}
+
+    ${(props) =>
+    props.photoUser &&
+    css`
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
     `}
 `;

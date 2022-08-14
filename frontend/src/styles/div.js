@@ -34,7 +34,7 @@ export const ContentCenter = styled.div`
   ${(props) =>
     props.noCopy &&
     css`
-     -moz-user-select: none;
+      -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -ms-user-select: none;
@@ -43,7 +43,6 @@ export const ContentCenter = styled.div`
     props.inf_follower &&
     css`
       margin-top: 20px;
-
     `}
 `;
 
@@ -52,6 +51,14 @@ export const ContentColumnCenter = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  ${(props) =>
+    props.post &&
+    css`
+      width: 30%;
+      flex: 30%;
+      margin: 10px 5px;
+    `}
 
   ${(props) =>
     props.login &&
@@ -63,7 +70,7 @@ export const ContentColumnCenter = styled.div`
   ${(props) =>
     props.noCopy &&
     css`
-     -moz-user-select: none;
+      -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -ms-user-select: none;
@@ -81,6 +88,12 @@ export const ContentColumnCenter = styled.div`
 export const ContentColumn = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${(props) =>
+    props.feed &&
+    css`
+      width: 100%;
+    `}
 `;
 
 export const ContentLeft = styled.div`
@@ -97,10 +110,10 @@ export const ContentLeft = styled.div`
       height: 30px;
     `}
 
-    ${(props) =>
+  ${(props) =>
     props.noCopy &&
     css`
-     -moz-user-select: none;
+      -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -ms-user-select: none;
@@ -109,19 +122,37 @@ export const ContentLeft = styled.div`
   ${(props) =>
     props.options &&
     css`
-
-      height: 30px;
+      height: 40px;
       margin: 5px auto;
       padding-top: 10px;
       padding-left: 5px;
       width: 85%;
       border-radius: 10px;
 
-     
-
       &:active {
-        box-shadow: 3px 3px 3px 4px #c5c5c5;
+        box-shadow: 1px 1px 3px 1px #c1b2ff;
       }
+    `}
+
+    ${(props) =>
+    props.search &&
+    css`
+      width: 30%;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 3px;
+      border: 2px solid #808eff;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    `}
+
+    ${(props) =>
+    props.infPost &&
+    css`
+      width: 100%;
+      margin-top: 5px;
     `}
 `;
 
@@ -181,7 +212,7 @@ export const Content = styled.div`
   ${(props) =>
     props.noCopy &&
     css`
-     -moz-user-select: none;
+      -moz-user-select: none;
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -ms-user-select: none;
@@ -207,8 +238,7 @@ export const Content = styled.div`
     css`
       margin: auto;
       width: 100%;
-      background-color: red;
-      
+      height: auto;
     `}
 
   ${(props) =>
@@ -220,6 +250,7 @@ export const Content = styled.div`
       float: left;
       position: fixed;
       padding: 10px;
+      overflow-y: scroll;
     `}
 
   ${(props) =>
@@ -227,7 +258,7 @@ export const Content = styled.div`
     css`
       background-color: #fff;
       width: 79%;
-      height: 765px;
+      min-height: 765px;
       padding: 10px 5px;
       border: 1px solid #e0e0e0;
       border-radius: 30px;
@@ -235,5 +266,68 @@ export const Content = styled.div`
       position: relative;
       left: 20%;
       margin-top: 2px;
+    `}
+
+  ${(props) =>
+    props.options &&
+    css`
+      margin-top: 20px;
+      height: 47%;
+      overflow-y: scroll;
+    `}
+  
+  ${(props) =>
+    props.head &&
+    css`
+      padding: 0 10px;
+      padding-left: 50px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    `}
+
+    ${(props) =>
+    props.history &&
+    css`
+      display: inline-flex;
+      height: 80px;
+      width: 100%;
+      overflow-x: scroll;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    `}
+
+    ${(props) =>
+    props.infPost &&
+    css`
+      width: 350px;
+    `}
+
+    ${(props) =>
+    props.posts &&
+    css`
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    `}
+`;
+
+export const Hr = styled.hr`
+  ${(props) =>
+    props.options &&
+    css`
+      width: 80%;
+      color: #aaaabb;
+    `}
+  ${(props) =>
+    props.optionsV &&
+    css`
+      border: none;
+      border-left: 1px solid hsla(200, 10%, 50%, 100);
+      height: 30px;
+      width: 1px;
+      color: #aaaabb;
     `}
 `;

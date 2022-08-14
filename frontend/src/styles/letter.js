@@ -22,6 +22,14 @@ export const Label = styled.label`
     `}
 
   ${(props) =>
+    props.subTitle &&
+    css`
+      color: #000;
+      font-weight: 600;
+      font-size: 23px;
+    `}
+
+  ${(props) =>
     props.trasnparent &&
     css`
       color: #aaaabb;
@@ -62,8 +70,18 @@ export const Label = styled.label`
     props.options &&
     css`
       font-family: 'Segoe UI';
-      font-family: 18px;
+      font-family: 19px;
       margin-left: 20px;
+    `}
+
+    ${(props) =>
+    props.nicknamePost &&
+    css`
+      font-family: 'Segoe UI';
+      font-family: 19px;
+      position: relative;
+      top: 8px;
+      font-weight:bold;
     `}
 `;
 
