@@ -3,7 +3,7 @@ USE ig;
 CREATE TABLE comment (
     id INT(11) NOT NULL AUTO_INCREMENT,
     comment INT(11) NOT NULL,
-    id_users INT(11),
+    id_user INT(11),
     id_post INT(11),
     create_ timestamp NOT NULL DEFAULT current_timestamp,
     update_ timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,

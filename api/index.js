@@ -9,6 +9,8 @@ const BodyParser = require("body-parser");
 
 const userRegister = require("./src/auth/router/userView");
 const userAuth = require("./src/auth/router/userLogin");
+const post = require("./src/post/routers/post");
+const heartPost = require("./src/post/routers/heart")
 
 
 const app = express();
@@ -57,7 +59,8 @@ app.use(morgan("dev"));
 
 app.use("/i/user/view", userRegister);
 app.use("/i/user/auth", userAuth);
-
+app.use("/i/feed", post);
+app.use("/i/heart", heartPost)
 
 //STARTING THE SERVER
 async function main() {
