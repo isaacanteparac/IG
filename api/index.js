@@ -11,7 +11,7 @@ const userRegister = require("./src/auth/router/userView");
 const userAuth = require("./src/auth/router/userLogin");
 const post = require("./src/post/routers/post");
 const heartPost = require("./src/post/routers/heart")
-
+const commentPost = require("./src/post/routers/comment");
 
 const app = express();
 
@@ -61,6 +61,7 @@ app.use("/i/user/view", userRegister);
 app.use("/i/user/auth", userAuth);
 app.use("/i/feed", post);
 app.use("/i/heart", heartPost)
+app.use("/i/comment", commentPost)
 
 //STARTING THE SERVER
 async function main() {

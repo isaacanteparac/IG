@@ -14,7 +14,7 @@ heart.getCount_ = async (req, res) => {
 
     res.status(200).json(countHeartPost);
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -25,7 +25,7 @@ heart.idGetUser_ = async (req, res) => {
     ]);
     res.status(200).json(idGetUser);
   } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -33,7 +33,7 @@ heart.delete_ = async (req, res) => {
   try {
     const id = req.params.id;
     await db.query("DELETE FROM heart WHERE id = ?", [id]);
-    res.status(200).json({ ok: true });
+    res.status(200).json({ ok: true, message:"successful removal" });
   } catch (error) {
     res.status(400).json({ ok: false, message: error });
   }
@@ -50,7 +50,7 @@ heart.post_ = async (req, res) => {
         id_user,
       };
       await db.query("INSERT INTO heart set ?", [create]);
-      return res.status(200).json({ message: true });
+      return res.status(200).json({ok:true, message:"successful publication"});
     } catch (error) {
       return res.status(400).json({ ok: false, message: error });
     }

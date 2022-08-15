@@ -14,17 +14,16 @@ post.get_ = async (req, res) => {
   }
 };
 
-
 post.getIdUser_ = async (req, res) => {
-    try {
-        const idUser = await db.query(getData + "WHERE users.id = ?", [
-          req.params.id,
-        ]);
-        res.status(200).json(idUser);
-      } catch (error) {
-        res.status(400).json({ message: error });
-      }
-  };
+  try {
+    const idUser = await db.query(getData + "WHERE users.id = ?", [
+      req.params.id,
+    ]);
+    res.status(200).json(idUser);
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
+};
 
 post.idGet_ = async (req, res) => {
   try {
@@ -43,7 +42,7 @@ post.delete_ = async (req, res) => {
     await db.query("DELETE FROM heart WHERE id_post = ?", [id]);
     await db.query("DELETE FROM comment WHERE id_post = ?", [id]);
     await db.query("DELETE FROM post WHERE id = ?", [id]);
-    res.status(200).json({ ok: true });
+    res.status(200).json({ ok: true, message: "successful removal" });
   } catch (error) {
     res.status(400).json({ ok: false, message: error });
   }
@@ -61,7 +60,9 @@ post.post_ = async (req, res) => {
       };
       console.log(create);
       await db.query("INSERT INTO post set ?", [create]);
-      return res.status(200).json({ message: true });
+      return res
+        .status(200)
+        .json({ ok: true, message: "successful publication" });
     } catch (error) {
       return res.status(400).json({ ok: false, message: error });
     }
