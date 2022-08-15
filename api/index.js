@@ -59,12 +59,11 @@ app.use("/i/user/view", userRegister);
 app.use("/i/user/auth", userAuth);
 
 
-
 //STARTING THE SERVER
 async function main() {
   await app.listen(app.get("port"));
 
-  console.log(""+app.get("port"));
+  console.log("API "+app.get("port"));
 }
 
 main();

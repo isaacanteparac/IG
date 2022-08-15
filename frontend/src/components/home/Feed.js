@@ -42,8 +42,8 @@ export default function Feed() {
      
             
 
-            <CardFeed image={ims} nickname="billieeilish"/>
-            <CardFeed image={ims} nickname="billieeilish"/>
+            <CardFeed image="https://ca-times.brightspotcdn.com/dims4/default/b9de188/2147483647/strip/true/crop/4394x3110+0+0/resize/840x595!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F8c%2F88%2F848b8f381258265c59d22a36ff8f%2F913c85d873314a96a7beb82a9cafaa24" nickname="billieeilish"/>
+            <CardFeed image="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_2%29.jpg/220px-BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_2%29.jpg" nickname="billieeilish"/>
             <CardFeed image={ims} nickname="billieeilish"/>
 
             

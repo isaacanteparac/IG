@@ -55,9 +55,14 @@ export const ContentColumnCenter = styled.div`
   ${(props) =>
     props.post &&
     css`
-      width: 30%;
-      flex: 30%;
-      margin: 10px 5px;
+      //width: 30%;
+      //flex: 30%;
+      // margin: 5px;
+      width: 100%;
+      background-color: red;
+      //align-self: flex-start;
+      margin: auto 5px;
+      padding: 0;
     `}
 
   ${(props) =>
@@ -299,7 +304,7 @@ export const Content = styled.div`
     ${(props) =>
     props.infPost &&
     css`
-      width: 350px;
+      width: 100%;
     `}
 
     ${(props) =>
@@ -308,9 +313,12 @@ export const Content = styled.div`
       width: 100%;
       height: 100%;
 
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
+      display: grid;
+      //flex-wrap: wrap;
+      //align-items: center;
+      grid-template-columns: repeat(3, 30%);
+      grid-gap: 10px;
+      grid-auto-flow: row dense;
     `}
 `;
 
