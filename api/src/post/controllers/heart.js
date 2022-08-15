@@ -49,7 +49,6 @@ heart.post_ = async (req, res) => {
         id_post,
         id_user,
       };
-      console.log(create);
       await db.query("INSERT INTO heart set ?", [create]);
       return res.status(200).json({ message: true });
     } catch (error) {
