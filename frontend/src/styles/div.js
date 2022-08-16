@@ -18,6 +18,7 @@ export const ContentCenter = styled.div`
     css`
       margin: auto;
       width: 100%;
+      height: 100%;
       float: left;
       background-color: #fff;
     `}
@@ -55,13 +56,18 @@ export const ContentColumnCenter = styled.div`
   ${(props) =>
     props.post &&
     css`
-      //width: 30%;
+      width: 100%;
+
+   
+
       //flex: 30%;
       // margin: 5px;
-      width: 100%;
+      //width: 30%;
+
+
       background-color: red;
       //align-self: flex-start;
-      margin: auto 5px;
+      margin: auto;
       padding: 0;
     `}
 
@@ -229,6 +235,10 @@ export const Content = styled.div`
       position: relative;
       bottom: 5px;
       left: 5px;
+      width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     `}
 
   ${(props) =>
@@ -314,11 +324,21 @@ export const Content = styled.div`
       height: 100%;
 
       display: grid;
+      grid-template-columns: repeat(3,30%);
+      grid-gap: 5px;
+      padding: 5px;
+
+      /*display: grid;
       //flex-wrap: wrap;
       //align-items: center;
-      grid-template-columns: repeat(3, 30%);
+      grid-template-columns: repeat(3, 33%);
       grid-gap: 10px;
       grid-auto-flow: row dense;
+      justify-content: flex-start;
+      align-items: flex-start;
+      grid-column-end: span 2;
+  grid-row-end: span 2;*/
+     
     `}
 `;
 

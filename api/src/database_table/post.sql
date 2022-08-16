@@ -2,8 +2,9 @@ USE ig;
 
 CREATE TABLE post (
     id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NULL,
     photo_video LONGBLOB,
-    description VARCHAR(255) NULL,
+    description MEDIUMTEXT NULL,
     id_user INT(11),
     create_ timestamp NOT NULL DEFAULT current_timestamp,
     update_ timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,

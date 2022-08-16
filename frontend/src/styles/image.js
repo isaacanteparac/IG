@@ -13,8 +13,8 @@ export const ContentImg = styled.div`
     css`
       width: 50%;
       height: auto;
-      position: relative;
-      top: 45px;
+      margin-top: 45px;
+      margin-bottom: 35px;
       overflow: hidden;
       background-image: radial-gradient(
         circle at 15.91% 9.37%,
@@ -54,7 +54,9 @@ export const ContentImg = styled.div`
     props.post &&
     css`
       width: 100%;
+      border-radius: 30px;
       overflow: hidden;
+      background-color: black;
     `}
 
     ${(props) =>
@@ -118,8 +120,9 @@ export const Img = styled.img`
     css`
       margin: auto;
       width: 100%;
+      //height: 100%;
       border-radius: 30px;
-
+      object-fit: cover;
     `}
 
     ${(props) =>

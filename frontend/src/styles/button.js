@@ -39,7 +39,6 @@ export const Button = styled.button`
       background-color: transparent;
       text-align: center;
       border: 1px solid #c5c5c5;
-
       margin: 0 10px;
       &:active {
         box-shadow: 1px 1px 1px 1px #c5c5c5;
@@ -56,7 +55,6 @@ export const Button = styled.button`
       background-color: transparent;
       text-align: center;
       border: 1px solid #c5c5c5;
-
       padding: 5px 10px;
       &:active {
         border: 2px solid #905eff;

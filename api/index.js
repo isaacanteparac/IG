@@ -7,11 +7,11 @@ const { database } = require("./keys");
 const BodyParser = require("body-parser");
 
 
-const userRegister = require("./src/auth/router/userView");
 const userAuth = require("./src/auth/router/userLogin");
 const post = require("./src/post/routers/post");
 const heartPost = require("./src/post/routers/heart")
 const commentPost = require("./src/post/routers/comment");
+const user = require("./src/profile/routers/user");
 
 const app = express();
 
@@ -57,11 +57,12 @@ app.use(morgan("dev"));
 
 //ROUTES
 
-app.use("/i/user/view", userRegister);
+
 app.use("/i/user/auth", userAuth);
 app.use("/i/feed", post);
 app.use("/i/heart", heartPost)
 app.use("/i/comment", commentPost)
+app.use("/i/user", user);
 
 //STARTING THE SERVER
 async function main() {
