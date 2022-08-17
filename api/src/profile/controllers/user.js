@@ -30,4 +30,24 @@ user.delete_ = async (req, res) => {
   }
 };
 
+user.put_ = async (req, res) => {
+  const { name, lastname, password } = req.body;
+  const empty = (name, lastname, password);
+  if (empty != "") {
+    try {
+      const put = {
+        name,
+        lastname,
+        password,
+      };
+      await db.query("UPDATE users set ? WHERE id = ?", [put, req.params.id]);
+      res.status(200).json({ ok: true, message: "successful update" });
+    } catch (error) {
+      res.status(400).json({ ok: false, message: error });
+    }
+  } else {
+    res.status(400).json({ ok: false, message: "do not enter empty data" });
+  }
+};
+
 module.exports = user;

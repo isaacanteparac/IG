@@ -6,7 +6,10 @@ const {
     get_,
     delete_,
     post_,
+    getCount_
 } = require("../controllers/comment");
+
+router.route("/count/:id").get(getCount_)
 
 router.route("/:id").get(get_)
 

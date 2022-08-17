@@ -5,7 +5,7 @@ const {
   get_,
   idGet_,
   delete_,
-  update_,
+  put_,
 } = require("../controllers/user");
 
 router.route("/").get(get_);
@@ -13,5 +13,7 @@ router.route("/").get(get_);
 router.route("/:id").get(idGet_);
 
 router.route("/:id").delete(delete_);
+
+router.route("/:id").put(put_);
 
 module.exports = router;

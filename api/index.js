@@ -12,6 +12,7 @@ const post = require("./src/post/routers/post");
 const heartPost = require("./src/post/routers/heart")
 const commentPost = require("./src/post/routers/comment");
 const user = require("./src/profile/routers/user");
+const follow = require("./src/profile/routers/follow")
 
 const app = express();
 
@@ -60,9 +61,10 @@ app.use(morgan("dev"));
 
 app.use("/i/user/auth", userAuth);
 app.use("/i/feed", post);
-app.use("/i/heart", heartPost)
-app.use("/i/comment", commentPost)
+app.use("/i/heart", heartPost);
+app.use("/i/comment", commentPost);
 app.use("/i/user", user);
+app.use("/i/follow", follow);
 
 //STARTING THE SERVER
 async function main() {

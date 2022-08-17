@@ -85,7 +85,7 @@ export const Button = styled.button`
         #006df2 75%,
         #0054e5 100%
       );
-      &:active {
+      &:checked{
         background-image: radial-gradient(
           circle at -20.44% 43.84%,
           #f1d8ff 0,

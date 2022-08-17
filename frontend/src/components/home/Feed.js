@@ -36,7 +36,7 @@ export default function Feed() {
             <Label subTitle>Feed</Label>
         </Content>
         <Content posts>
-            <CardFeed image={ims} nickname="billieeilish"/>
+            <CardFeed image={ims} nickname="billieeilish" idPost={1}/>
             <CardFeed image="https://upload.wikimedia.org/wikipedia/commons/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg" nickname="billieeilish"/>
             <CardFeed image={ims} nickname="billieeilish"/>
      

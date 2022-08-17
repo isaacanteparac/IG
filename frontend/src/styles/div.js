@@ -45,6 +45,8 @@ export const ContentCenter = styled.div`
     css`
       margin-top: 20px;
     `}
+
+
 `;
 
 export const ContentColumnCenter = styled.div`
@@ -56,18 +58,16 @@ export const ContentColumnCenter = styled.div`
   ${(props) =>
     props.post &&
     css`
-      width: 100%;
-
+      width: 30%;
+      height:400px;
    
 
       //flex: 30%;
       // margin: 5px;
       //width: 30%;
 
-
-      background-color: red;
       //align-self: flex-start;
-      margin: auto;
+      margin: 8px auto;
       padding: 0;
     `}
 
@@ -162,8 +162,17 @@ export const ContentLeft = styled.div`
     ${(props) =>
     props.infPost &&
     css`
-      width: 100%;
+      width: 50%;
       margin-top: 5px;
+      float: left;
+    `}
+
+    ${(props) =>
+    props.btnInteractionPost &&
+    css`
+      height: 100%;
+      padding-top:10px ;
+      margin: 0 10px;
     `}
 `;
 
@@ -177,6 +186,16 @@ export const ContentRight = styled.div`
     css`
       width: 75%;
       height: 40px;
+    `}
+
+    ${(props) =>
+    props.interactionPost &&
+    css`
+      width: 50%;
+      margin-top: 5px;
+      float: left;
+      height: 40px;
+      overflow: hidden;
     `}
 `;
 
@@ -315,6 +334,7 @@ export const Content = styled.div`
     props.infPost &&
     css`
       width: 100%;
+
     `}
 
     ${(props) =>
@@ -323,15 +343,15 @@ export const Content = styled.div`
       width: 100%;
       height: 100%;
 
-      display: grid;
-      grid-template-columns: repeat(3,30%);
-      grid-gap: 5px;
-      padding: 5px;
+      //display: grid;
+      //grid-template-columns: repeat(3,30%);
+      //grid-gap: 5px;
+      //padding: 5px;
 
-      /*display: grid;
-      //flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
       //align-items: center;
-      grid-template-columns: repeat(3, 33%);
+      /*grid-template-columns: repeat(3, 33%);
       grid-gap: 10px;
       grid-auto-flow: row dense;
       justify-content: flex-start;
@@ -340,6 +360,8 @@ export const Content = styled.div`
   grid-row-end: span 2;*/
      
     `}
+
+   
 `;
 
 export const Hr = styled.hr`

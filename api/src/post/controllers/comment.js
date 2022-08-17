@@ -16,6 +16,19 @@ comment.get_ = async (req, res) => {
   }
 };
 
+comment.getCount_ = async (req, res) => {
+  try {
+    const countComment = await db.query(
+      "SELECT COUNT(*) FROM comment WHERE id_post = ?",
+      [req.params.id]
+    );
+
+    res.status(200).json(countComment);
+  } catch (error) {
+    res.status(400).json({ ok: false, message: error });
+  }
+};
+
 comment.post_ = async (req, res) => {
   const { comment, id_user, id_post } = req.body;
   const empty = (comment, id_user, id_post);

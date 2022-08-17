@@ -1,8 +1,8 @@
 USE ig;
 
-CREATE TABLE follower (
+CREATE TABLE follow (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    id_follower INT(11),
+    id_follow INT(11),
     id_user INT(11),
     create_ timestamp NOT NULL DEFAULT current_timestamp,
     update_ timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,
