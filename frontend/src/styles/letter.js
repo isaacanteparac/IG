@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
+import { themeLight } from "./colors";
 
 export const Label = styled.label`
   ${(props) =>
-    props.registerAccount &&
+    props.title &&
     css`
-      color: black;
+      color: ${({ theme }) => theme.primary_font};
       font-size: 18px;
       margin-bottom: 2px;
       font-weight: 400;
@@ -14,31 +15,23 @@ export const Label = styled.label`
     `}
 
   ${(props) =>
-    props.subTitleLogin &&
-    css`
-      color: #aaaabb;
-      font-weight: 600;
-      font-size: 20px;
-    `}
-
-  ${(props) =>
     props.subTitle &&
     css`
-      color: #000;
+      color: ${(props) => props.color || themeLight.subTitle};
       font-weight: 600;
-      font-size: 23px;
+      font-size: ${(props) => props.size || "20px"};
     `}
 
   ${(props) =>
     props.trasnparent &&
     css`
-      color: #aaaabb;
+      color: ${({ theme }) => theme.tertiary_font};
     `}
 
   ${(props) =>
     props.blod &&
     css`
-      color: #000;
+      color: ${({ theme }) => theme.primary_font};
       font-weight: 600;
     `}
 
@@ -53,7 +46,7 @@ export const Label = styled.label`
     ${(props) =>
     props.trasnparentNameBig &&
     css`
-      color: #000;
+      color: ${({ theme }) => theme.primary_font};
       font-size: 20px;
       font-weight: bolder;
     `}
@@ -69,7 +62,8 @@ export const Label = styled.label`
   ${(props) =>
     props.options &&
     css`
-      font-family: 'Segoe UI';
+      color: ${({ theme }) => theme.primary_font};
+      font-family: "Segoe UI";
       font-family: 19px;
       margin-left: 20px;
     `}
@@ -77,11 +71,11 @@ export const Label = styled.label`
     ${(props) =>
     props.nicknamePost &&
     css`
-      font-family: 'Segoe UI';
+      font-family: "Segoe UI";
       font-family: 19px;
       position: relative;
       top: 8px;
-      font-weight:bold;
+      font-weight: bold;
     `}
 `;
 
@@ -91,7 +85,7 @@ export const H2 = styled.h1`
   ${(props) =>
     props.login &&
     css`
-      color: #c600ff;
+      color: ${({ theme }) => theme.register_title};
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     `}
 `;
@@ -117,12 +111,12 @@ export const A = styled.a`
       border-radius: 20px;
       background-color: transparent;
       text-align: center;
-      border: 1px solid #c5c5c5;
+      border: 1px solid ${({ theme }) => theme.login_signup_font};
 
       padding: 5px 10px;
       &:active {
-        color: #905eff;
-        border: 2px solid #905eff;
+        color: ${({ theme }) => theme.login_signup_link};
+        border: 2px solid ${({ theme }) => theme.register_btnBg};
       }
     `}
 `;

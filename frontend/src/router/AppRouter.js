@@ -7,7 +7,6 @@ import Private from "./Private";
 
 import Navigation from "../components/home/Navigation";
 
-
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -26,7 +25,7 @@ export default function AppRouter() {
             path="/*"
             element={
               <Private>
-                <Navigation/>
+                <Navigation />
               </Private>
             }
           />

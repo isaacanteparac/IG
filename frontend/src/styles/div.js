@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 /*export const styleMain = {
   no_copy: {
     moz_user_select: none,
@@ -20,7 +19,7 @@ export const ContentCenter = styled.div`
       width: 100%;
       height: 100%;
       float: left;
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.register_bg};
     `}
 
   ${(props) =>
@@ -45,8 +44,6 @@ export const ContentCenter = styled.div`
     css`
       margin-top: 20px;
     `}
-
-
 `;
 
 export const ContentColumnCenter = styled.div`
@@ -59,8 +56,7 @@ export const ContentColumnCenter = styled.div`
     props.post &&
     css`
       width: 30%;
-      height:400px;
-   
+      height: 400px;
 
       //flex: 30%;
       // margin: 5px;
@@ -78,6 +74,7 @@ export const ContentColumnCenter = styled.div`
       margin-left: 10px;
       padding-top: 25px;
     `}
+
   ${(props) =>
     props.noCopy &&
     css`
@@ -86,6 +83,7 @@ export const ContentColumnCenter = styled.div`
       -webkit-user-select: none;
       -ms-user-select: none;
     `}
+
   ${(props) =>
     props.inf_follower &&
     css`
@@ -141,7 +139,9 @@ export const ContentLeft = styled.div`
       border-radius: 10px;
 
       &:active {
-        box-shadow: 1px 1px 3px 1px #c1b2ff;
+        background-color: ${({ theme }) => theme.optionMenu_bg};
+        border: 1px solid ${({ theme }) => theme.optionMenu_border};
+        box-shadow: 1px 1px 3px 1px ${({ theme }) => theme.optionMenu_shadow};
       }
     `}
 
@@ -154,9 +154,9 @@ export const ContentLeft = styled.div`
       align-items: center;
       justify-content: center;
       padding: 0 3px;
-      border: 2px solid #808eff;
+      border: 2px solid ${({ theme }) => theme.search_border};
       border-radius: 10px;
-      background-color: #f9f9f9;
+      background-color: ${({ theme }) => theme.search_bg};
     `}
 
     ${(props) =>
@@ -171,7 +171,7 @@ export const ContentLeft = styled.div`
     props.btnInteractionPost &&
     css`
       height: 100%;
-      padding-top:10px ;
+      padding-top: 10px;
       margin: 0 10px;
     `}
 `;
@@ -188,7 +188,7 @@ export const ContentRight = styled.div`
       height: 40px;
     `}
 
-    ${(props) =>
+  ${(props) =>
     props.interactionPost &&
     css`
       width: 50%;
@@ -278,8 +278,8 @@ export const Content = styled.div`
   ${(props) =>
     props.menu &&
     css`
-      background-color: #f9f9f9;
-      width: 18%;
+      background-color: ${({ theme }) => theme.menu_bg};
+      width: 18.5%;
       height: 100%;
       float: left;
       position: fixed;
@@ -290,16 +290,16 @@ export const Content = styled.div`
   ${(props) =>
     props.main &&
     css`
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.main_bg};
       width: 79%;
       min-height: 765px;
       padding: 10px 5px;
-      border: 1px solid #e0e0e0;
+      border: 2px solid ${({ theme }) => theme.main_border};
       border-radius: 30px;
       float: left;
       position: relative;
       left: 20%;
-      margin-top: 2px;
+      margin: 10px 0;
     `}
 
   ${(props) =>
@@ -334,7 +334,6 @@ export const Content = styled.div`
     props.infPost &&
     css`
       width: 100%;
-
     `}
 
     ${(props) =>
@@ -358,10 +357,7 @@ export const Content = styled.div`
       align-items: flex-start;
       grid-column-end: span 2;
   grid-row-end: span 2;*/
-     
     `}
-
-   
 `;
 
 export const Hr = styled.hr`
@@ -369,7 +365,7 @@ export const Hr = styled.hr`
     props.options &&
     css`
       width: 80%;
-      color: #aaaabb;
+      color: ${({ theme }) => theme.line_color};
     `}
   ${(props) =>
     props.optionsV &&
@@ -378,6 +374,6 @@ export const Hr = styled.hr`
       border-left: 1px solid hsla(200, 10%, 50%, 100);
       height: 30px;
       width: 1px;
-      color: #aaaabb;
+      color: ${({ theme }) => theme.line_color};
     `}
 `;

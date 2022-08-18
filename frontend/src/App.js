@@ -1,16 +1,18 @@
+import "./App.css";
+import { Context } from "./auth/Context";
+import AppRouter from "./router/AppRouter";
 
-import './App.css';
-import {Context} from "./auth/Context";
-import AppRouter from './router/AppRouter';
+import { ThemeProvider } from "styled-components";
+import { themeLight } from "./styles/colors";
 
 function App() {
-
   return (
-    
     <div>
-     <Context>
-        <AppRouter/>
-      </Context>
+      <ThemeProvider theme={themeLight}>
+        <Context>
+          <AppRouter />
+        </Context>
+      </ThemeProvider>
     </div>
   );
 }

@@ -19,45 +19,28 @@ export const Button = styled.button`
       text-transform: capitalize;
       border: none;
       font-size: 20px;
-      background-color: #9213f1;
-      color: #fff;
-      box-shadow: 4px 4px 4px #aaaabb;
+      background-color: ${({theme})=> theme.register_btnBg};
+      color: ${({theme}) => theme.secundary_font};
+      box-shadow: 4px 4px 4px ${({theme}) => theme.primary_shadow};
 
       &:active {
-        background-color: #b206fb;
+        background-color: ${({theme})=> theme.register_btnBgHv};
       }
     `}
-
-  ${(props) => props.login}
-
-  ${(props) =>
-    props.icontrasnparent &&
-    css`
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
-      background-color: transparent;
-      text-align: center;
-      border: 1px solid #c5c5c5;
-      margin: 0 10px;
-      &:active {
-        box-shadow: 1px 1px 1px 1px #c5c5c5;
-      }
-    `}
-
   
     ${(props) =>
     props.trasnparent &&
     css`
-      width: auto;
-      height: 30px;
-      border-radius: 20px;
+      width: ${(props) => props.width || "auto"};
+      height: ${(props) => props.height || "auto"};
+      border-radius:  ${(props) => props.radius || "0px"};
       background-color: transparent;
       text-align: center;
-      border: 1px solid #c5c5c5;
-      padding: 5px 10px;
+      border: 1px solid ${({theme}) => theme.secundary_border};
+      margin:${(props) => props.margin || "0px"};
+      padding: ${(props) => props.padding || "0px"};
       &:active {
-        border: 2px solid #905eff;
+        box-shadow: 1px 1px 1px 1px ${({theme}) => theme.secundary_shadow};
       }
     `}
 
@@ -73,7 +56,7 @@ export const Button = styled.button`
       float: right;
       position: relative;
       bottom: 40px;
-      color: #fff;
+      color: ${({theme}) => theme.secundary_font};
       font-size: 15px;
       font-weight: 600;
       padding: 5px 10px;
@@ -85,7 +68,7 @@ export const Button = styled.button`
         #006df2 75%,
         #0054e5 100%
       );
-      &:checked{
+      &:active {
         background-image: radial-gradient(
           circle at -20.44% 43.84%,
           #f1d8ff 0,

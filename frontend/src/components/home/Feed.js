@@ -5,6 +5,7 @@ import { Label } from "../../styles/letter";
 
 import History from "../feed/History";
 import CardFeed from "../feed/CardFeed";
+import { themeLight } from "../../styles/colors";
 
 
 export default function Feed() {
@@ -21,7 +22,7 @@ export default function Feed() {
     <ContentColumn feed>
       <Content>
         <Content>
-            <Label subTitle>History</Label>
+            <Label subTitle size="23px" color={themeLight.primary_font}>History</Label>
         </Content>
         <Content history>
             <History image={ims}/>
@@ -33,7 +34,7 @@ export default function Feed() {
       </Content>    
       <Content>
         <Content>
-            <Label subTitle>Feed</Label>
+            <Label subTitle size="23px" color={themeLight.primary_font} >Feed</Label>
         </Content>
         <Content posts>
             <CardFeed image={ims} nickname="billieeilish" idPost={1}/>

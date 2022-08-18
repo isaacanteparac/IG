@@ -8,7 +8,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import SensorsOutlinedIcon from "@mui/icons-material/SensorsOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
-import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 
 //styles
 import {
@@ -29,7 +29,6 @@ import Message from "./Message";
 import Explored from "./Explored";
 import Direct from "./Direct";
 import Setting from "./Setting";
-
 
 export default function Navigation() {
   const { auth, logout } = useContext(AuthContext);
@@ -154,11 +153,11 @@ export default function Navigation() {
         <Content main>
           <Content head>
             <ContentLeft search>
-              <SearchOutlinedIcon sx={{fontSize: 30, color:"#808eff"}}/>
-              <Input search type="text" placeholder="Search..."/>
+              <SearchOutlinedIcon sx={{ fontSize: 30, color: "#808eff" }} />
+              <Input search type="text" placeholder="Search..." />
             </ContentLeft>
             <Button addPhoto>
-              <AddBoxOutlinedIcon sx={{marginRight:"5px"}}/>
+              <AddBoxOutlinedIcon sx={{ marginRight: "5px" }} />
               <Label>Add Photo</Label>
             </Button>
           </Content>
@@ -168,9 +167,7 @@ export default function Navigation() {
           {direct ? <Direct /> : null}
           {setting ? <Setting /> : null}
         </Content>
- 
-Search...
-Feed     </Content>
+      </Content>
     </ThemeProvider>
   );
 }

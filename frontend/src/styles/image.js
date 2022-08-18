@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 export const ContentImg = styled.div`
   display: flex;
   align-items: center;
@@ -27,7 +26,7 @@ export const ContentImg = styled.div`
         #0025cb 100%
       );
 
-      box-shadow: 4px 4px 4px 5px #c5c5c5;
+      box-shadow: 4px 4px 4px 5px ${({theme}) => theme.register_img_shadow};
       border-radius: 40px;
       padding: 5px;
     `}
@@ -112,7 +111,7 @@ export const Img = styled.img`
       width: 60px;
       border-radius: 30px;
       padding: 1px;
-      border: 3px solid #0057E7;
+      border: 3px solid ${({theme}) => theme.photoProfile_border};
     `}
 
     ${(props) =>

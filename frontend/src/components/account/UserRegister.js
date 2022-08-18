@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+
+
 import {
   ContentCenter,
   ContentColumnCenter,
@@ -9,7 +11,7 @@ import {
   ContentLeftColumn,
 } from "../../styles/div";
 import { Img, ContentImg } from "../../styles/image";
-import { Label, H2, A  } from "../../styles/letter";
+import { Label, H2, A } from "../../styles/letter";
 import { Button } from "../../styles/button";
 
 import imageHe from "../../img/human.png";
@@ -19,10 +21,15 @@ import iconFacebook from "../../img/facebook.svg";
 import SingUp from "./SingUp";
 import Login from "./Login";
 
+
+
+
+
+
 export default function UserRegister(props) {
   const [viewLogin, setViewLogin] = useState(props.login);
   const [viewSingUp, setViewSingUp] = useState(props.signup);
-  const [url, setUrl] = useState(props.url)
+  const [url, setUrl] = useState(props.url);
   const [textChange, setTextChange] = useState({
     btnChange: "Sing Up",
     txtChange: "don't have an account?",
@@ -30,7 +37,6 @@ export default function UserRegister(props) {
     account: "log in with",
     imageHe: true,
     imageShe: false,
-
   });
 
   const btnChange = () => {
@@ -45,7 +51,6 @@ export default function UserRegister(props) {
         imageHe: false,
         imageShe: true,
       });
-      
     } else {
       setViewSingUp(false);
       setViewLogin(true);
@@ -57,19 +62,19 @@ export default function UserRegister(props) {
         imageShe: false,
         imageHe: true,
       });
-
     }
   };
 
   useEffect(() => {
-    btnChange()
-  },[])
+    btnChange();
+  }, []);
 
   return (
+    
     <ContentCenter login>
       <ContentImg login>
-        {textChange.imageHe? <Img login src={imageHe} />:null}
-        {textChange.imageShe? <Img login src={imageShe} />:null}
+        {textChange.imageHe ? <Img login src={imageHe} /> : null}
+        {textChange.imageShe ? <Img login src={imageShe} /> : null}
       </ContentImg>
 
       <ContentColumnCenter login>
@@ -78,14 +83,17 @@ export default function UserRegister(props) {
             <Label trasnparent>{textChange.txtChange}</Label>
           </Content>
           <Content btnlogin>
-
-              <A transparent href={url} > {textChange.btnChange} </A>
-  
+            <A transparent href={url}>
+              {" "}
+              {textChange.btnChange}{" "}
+            </A>
           </Content>
         </ContentRight>
-        <ContentLeftColumn titleLogin>
+        <ContentLeftColumn login>
           <H2 login>Welcome to ImageXD</H2>
-          <Label subTitleLogin>{textChange.subTitle}</Label>
+          <Label subTitle color={({theme}) => theme.tertiary_font }>
+            {textChange.subTitle}
+          </Label>
         </ContentLeftColumn>
         {viewLogin ? <Login /> : null}
 
@@ -93,13 +101,27 @@ export default function UserRegister(props) {
 
         <ContentLeft login>
           <Content>
-            <Label subTitleLogin>{textChange.account}</Label>
+            <Label subTitle color={({theme}) => theme.tertiary_font }>
+              {textChange.account}
+            </Label>
           </Content>
           <Content btnCreateAccount>
-            <Button icontrasnparent>
+            <Button
+              trasnparent
+              width="40px"
+              height="40px"
+              radius="20px"
+              margin="0 10px"
+            >
               <Img icon src={iconFacebook} />
             </Button>
-            <Button icontrasnparent>
+            <Button
+              trasnparent
+              width="40px"
+              height="40px"
+              radius="20px"
+              margin="0 10px"
+            >
               <Img icon src={iconGoogle} />
             </Button>
           </Content>
