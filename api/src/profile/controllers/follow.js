@@ -12,7 +12,7 @@ follow.getFollower_ = async (req, res) => {
     ]);
     res.status(200).json(idGet);
   } catch (error) {
-    res.status(404).json({ ok: false, message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -23,7 +23,7 @@ follow.getFollowing_ = async (req, res) => {
     ]);
     res.status(200).json(idGet);
   } catch (error) {
-    res.status(404).json({ ok: false, message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -36,7 +36,7 @@ follow.countFollower_ = async (req, res) => {
   
       res.status(200).json(countComment);
     } catch (error) {
-      res.status(404).json({ ok: false, message: error });
+      res.status(400).json({ ok: false, message: error });
     }
   };
   
@@ -49,7 +49,7 @@ follow.countFollower_ = async (req, res) => {
     
         res.status(200).json(countComment);
       } catch (error) {
-        res.status(404).json({ ok: false, message: error });
+        res.status(400).json({ ok: false, message: error });
       }
     };
 
@@ -58,7 +58,7 @@ follow.delete_ = async (req, res) => {
     await db.query("DELETE FROM follow WHERE id = ?", [req.params.id]);
     res.status(200).json({ message: "Delete id follow" });
   } catch (error) {
-    res.status(404).json({ ok: false, message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -74,7 +74,7 @@ follow.post_ = async (req, res) => {
       await db.query("INSERT INTO follow SET ?", [create]);
       res.status(200).json({ ok: true, message: "successful post" });
     } catch (error) {
-      res.status(404).json({ ok: false, message: error });
+      res.status(400).json({ ok: false, message: error });
     }
   } else {
     res.status(404).json({ ok: false, message: "do not enter empty data" });

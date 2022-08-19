@@ -10,7 +10,7 @@ post.get_ = async (req, res) => {
     const get = await db.query(getData);
     res.status(200).json(get);
   } catch (error) {
-    res.status(404).json({ message: error });
+    res.status(400).json({ message: error });
   }
 };
 
@@ -21,7 +21,7 @@ post.getIdUser_ = async (req, res) => {
     ]);
     res.status(200).json(idUser);
   } catch (error) {
-    res.status(404).json({ message: error });
+    res.status(400).json({ message: error });
   }
 };
 
@@ -32,7 +32,7 @@ post.idGet_ = async (req, res) => {
     ]);
     res.status(200).json(idGet);
   } catch (error) {
-    res.status(404).json({ message: error });
+    res.status(400).json({ message: error });
   }
 };
 
@@ -44,7 +44,7 @@ post.delete_ = async (req, res) => {
     await db.query("DELETE FROM post WHERE id = ?", [id]);
     res.status(200).json({ ok: true, message: "successful removal" });
   } catch (error) {
-    res.status(404).json({ ok: false, message: error });
+    res.status(400).json({ ok: false, message: error });
   }
 };
 
@@ -64,7 +64,7 @@ post.post_ = async (req, res) => {
         .status(200)
         .json({ ok: true, message: "successful publication" });
     } catch (error) {
-      return res.status(404).json({ ok: false, message: error });
+      return res.status(400).json({ ok: false, message: error });
     }
   } else {
     return res
@@ -83,7 +83,7 @@ post.put_ = async (req, res) => {
     await db.query("UPDATE post set ? WHERE id = ?", [put, id]);
     return res.status(200).json({ok: true, message:"successful update" });
   } catch (error) {
-    return res.status(404).json({ ok: false, message: error });
+    return res.status(400).json({ ok: false, message: error });
   }
 };
 
