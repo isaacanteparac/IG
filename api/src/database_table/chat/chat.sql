@@ -1,6 +1,7 @@
 USE ig;
 
-CREATE TABLE chat (
+CREATE TABLE
+    chat (
         id INT(11) NOT NULL AUTO_INCREMENT,
         id_friend INT(11),
         id_user INT(11),

@@ -9,6 +9,6 @@ CREATE TABLE comment (
     update_ timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,
     delete_ timestamp NOT NULL DEFAULT current_timestamp,
     PRIMARY KEY (id),
-    FOREIGN KEY (id_users) REFERENCES users(id),
+    FOREIGN KEY (id_user) REFERENCES users(id),
     FOREIGN KEY (id_post) REFERENCES post(id)
 );

@@ -12,7 +12,7 @@ comment.get_ = async (req, res) => {
     ]);
     res.status(200).json(get);
   } catch (error) {
-    res.status(400).json({ ok: false, message: error });
+    res.status(404).json({ ok: false, message: error });
   }
 };
 
@@ -25,7 +25,7 @@ comment.getCount_ = async (req, res) => {
 
     res.status(200).json(countComment);
   } catch (error) {
-    res.status(400).json({ ok: false, message: error });
+    res.status(404).json({ ok: false, message: error });
   }
 };
 
@@ -40,12 +40,12 @@ comment.post_ = async (req, res) => {
         id_post,
       };
       await db.query("INSERT INTO comment SET ?", [create]);
-      res.status(200).json({ ok: true, message: "successful publication" });
+      res.status(200).json({ ok: true, message: "successful post" });
     } catch (error) {
-      res.status(400).json({ ok: false, message: error });
+      res.status(404).json({ ok: false, message: error });
     }
   } else {
-    res.status(400).json({ ok: false, message: "do not enter empty data" });
+    res.status(404).json({ ok: false, message: "do not enter empty data" });
   }
 };
 
@@ -54,7 +54,7 @@ comment.delete_ = async (req, res) => {
         await db.query("DELETE FROM comment WHERE id = ?", [req.params.id])
         res.status(200).json({ok:true, message:"successful removal"})
     } catch (error) {
-        res.status(400).json({ok:false, message:error})
+        res.status(404).json({ok:false, message:error})
     }
 }
 

@@ -9,5 +9,5 @@ CREATE TABLE follow (
     delete_ timestamp NOT NULL DEFAULT current_timestamp,
     PRIMARY KEY (id),
     FOREIGN KEY (id_user) REFERENCES users(id),
-    FOREIGN KEY (id_follower) REFERENCES users(id)
+    FOREIGN KEY (id_follow) REFERENCES users(id)
 );

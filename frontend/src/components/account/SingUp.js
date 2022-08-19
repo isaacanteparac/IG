@@ -28,6 +28,7 @@ export default function SingUp() {
           type="text"
           placeholder="Real name"
           name="name"
+          required
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -40,6 +41,7 @@ export default function SingUp() {
           type="text"
           placeholder="Real surname"
           name="lastname"
+          required
           onChange={(e) => {
             setLastname(e.target.value);
           }}
@@ -52,6 +54,7 @@ export default function SingUp() {
           type="text"
           placeholder="holamundo@emial.com"
           name="email"
+          required
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -64,6 +67,7 @@ export default function SingUp() {
           type="text"
           placeholder="holaMundo"
           name="nickname"
+          required
           onChange={(e) => {
             setNickname(e.target.value);
           }}
@@ -76,6 +80,7 @@ export default function SingUp() {
           type="password"
           placeholder="8+ characters"
           name="password"
+          required
           onChange={(e) => {
             setPassword(e.target.value);
           }}

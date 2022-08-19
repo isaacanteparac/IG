@@ -65,6 +65,10 @@ app.use("/i/message", message);
 async function main() {
   await app.listen(app.get("port"));
 
+  console.log("█  █ █▀▀ █▀▀▄  ▀  █  █  ▀  █▀▄▀█ █▀▀");
+  console.log("█▀▀█ █▀▀ █▀▀▄ ▀█▀ █▀▀█ ▀█▀ █ ▀ █ █▀▀");
+  console.log("█  █ ▀▀▀ ▀▀▀  ▀▀▀ ▀  ▀ ▀▀▀ ▀   ▀ ▀▀▀ ");
+
   console.log("API " + app.get("port"));
 }
 

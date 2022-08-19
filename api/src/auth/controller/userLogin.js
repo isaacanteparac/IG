@@ -35,38 +35,45 @@ userAuth.login = async (req, res) => {
 
 userAuth.createUser = async (req, res) => {
   let { name, lastname, email, nickname, password } = req.body;
-  const verifyEmail = await db.query("SELECT * FROM users WHERE email = ?", [
-    email,
-  ]);
-  const verifynickname = await db.query(
-    "SELECT * FROM users WHERE nickname = ?",
-    [nickname]
-  );
-  try {
-    if (verifyEmail.length < 1 && verifynickname.length < 1) {
-      password = await encryptPassword(password);
-      let newUser = {
-        name,
-        lastname,
-        email,
-        nickname,
-        password,
-      };
-      await db.query("INSERT INTO users set ?", [newUser]);
-      //TITLE: HACER CONSULTA PARA TRAER EL ID 
-      const user = {
-        name,
-        lastname,
-        email,
-        nickname,
-      };
-      const token = await generateToken(user);
-      res.status(200).json({ ok: true, token: token, user: user });
+  const empty = (name, lastname, email, nickname, password);
+  if(empty != "" || empty != null){
+    const verifyEmail = await db.query("SELECT * FROM users WHERE email = ?", [
+      email,
+    ]);
+    const verifynickname = await db.query(
+      "SELECT * FROM users WHERE nickname = ?",
+      [nickname]
+    );
+    try {
+      if (verifyEmail.length < 1 && verifynickname.length < 1) {
+        password = await encryptPassword(password);
+        let newUser = {
+          name,
+          lastname,
+          email,
+          nickname,
+          password,
+        };
+        await db.query("INSERT INTO users set ?", [newUser]);
+        //TITLE: HACER CONSULTA PARA TRAER EL ID 
+        const user = {
+          name,
+          lastname,
+          email,
+          nickname,
+        };
+        const token = await generateToken(user);
+        res.status(200).json({ ok: true, token: token, user: user });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(401).json({ ok: false, message: "email or nickname already exist" });
     }
-  } catch (error) {
-    console.log(error);
-    res.status(401).json({ ok: false, message: "email or nickname already exist" });
   }
+  else{
+    res.status(404).json({ok: false, message:"do not enter empty data"})
+  }
+ 
 };
 
 userAuth.revalidationToken = async (req, res) => {
