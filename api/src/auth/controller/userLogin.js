@@ -63,15 +63,15 @@ userAuth.createUser = async (req, res) => {
           nickname,
         };
         const token = await generateToken(user);
-        res.status(200).json({ ok: true, token: token, user: user });
+        return res.status(200).json({ ok: true, token: token, user: user });
       }
     } catch (error) {
       console.log(error);
-      res.status(401).json({ ok: false, message: "email or nickname already exist" });
+      return res.status(401).json({ ok: false, message: "email or nickname already exist" });
     }
   }
   else{
-    res.status(404).json({ok: false, message:"do not enter empty data"})
+    return res.status(404).json({ok: false, message:"do not enter empty data"})
   }
  
 };
@@ -85,10 +85,10 @@ userAuth.revalidationToken = async (req, res) => {
       email: req.email,
     };
     const token = await generateToken(userToken);
-    res(200).json({ ok: true, token: token, user: userToken });
+    return res(200).json({ ok: true, token: token, user: userToken });
     
   } catch (error) {
-    res(401).json({ ok: false, message: "no revalidation"});
+    return res(401).json({ ok: false, message: "no revalidation"});
   }
 };
 

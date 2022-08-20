@@ -1,0 +1,51 @@
+
+API ENDPOINTS 6660
+ALL
+    GET http://localhost:6660/i/all
+
+AUTH
+    POST http://localhost:6660/i/user/auth/create
+    POST http://localhost:6660/i/user/auth/verification
+    GET http://localhost:6660/i/user/auth/token
+
+
+USER
+    GET    http://localhost:6660/i/user
+    ID-GET http://localhost:6660/i/user/{id}
+    DELETE http://localhost:6660/i/user/{id}
+    PUT    http://localhost:6660/i/user/{id}
+
+
+PUBLICATION
+    GET    http://localhost:6660/i/feed
+    ID-GET http://localhost:6660/i/feed/{id}
+    ID-GET http://localhost:6660/i/user/{id}
+    DELETE http://localhost:6660/i/feed/{id}
+    PUT    http://localhost:6660/i/feed/put/{id}
+    POST   http://localhost:6660/i/feed/sent/
+
+
+HEART
+    ID-GET http://localhost:6660/i/heart/user/{id_post}
+    DELETE http://localhost:6660/i/heart/{id}
+    POST   http://localhost:6660/i/heart/
+
+
+COMMENT
+    ID-GET http://localhost:6660/i/commet/{id_post} 
+    DELETE http://localhost:6660/i/commet/{id}
+    POST   http://localhost:6660/i/commet
+
+
+FOLLOW
+    ID-GET http://localhost:6660/i/follow/follower/{id_follow}
+    ID-GET http://localhost:6660/i/follow/following/{id_user}
+    DELETE http://localhost:6660/i/follow/{id}
+    POST   http://localhost:6660/i/follow/
+
+
+MESSAGE
+    ID-GET http://localhost:6660/i/message/{id} chat
+    DELETE http://localhost:6660/i/message/{id}
+    PUT    http://localhost:6660/i/message/{id}
+    POST   http://localhost:6660/i/message/

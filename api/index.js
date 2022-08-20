@@ -14,6 +14,7 @@ const user = require("./src/profile/routers/user");
 const follow = require("./src/profile/routers/follow");
 const chat = require("./src/chat/routers/chat");
 const message = require("./src/chat/routers/message");
+const allData = require("./src/profile/routers/all");
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use(morgan("dev"));
 
 //ROUTES
 
+app.use("/i/all", allData)
 app.use("/i/user/auth", userAuth);
 app.use("/i/feed", post);
 app.use("/i/heart", heartPost);
@@ -63,11 +65,12 @@ app.use("/i/message", message);
 
 //STARTING THE SERVER
 async function main() {
+  console.clear();
   await app.listen(app.get("port"));
 
   console.log("█  █ █▀▀ █▀▀▄  ▀  █  █  ▀  █▀▄▀█ █▀▀");
   console.log("█▀▀█ █▀▀ █▀▀▄ ▀█▀ █▀▀█ ▀█▀ █ ▀ █ █▀▀");
-  console.log("█  █ ▀▀▀ ▀▀▀  ▀▀▀ ▀  ▀ ▀▀▀ ▀   ▀ ▀▀▀ ");
+  console.log("█  █ ▀▀▀ ▀▀▀  ▀▀▀ ▀  ▀ ▀▀▀ ▀   ▀ ▀▀▀\n");
 
   console.log("API " + app.get("port"));
 }
