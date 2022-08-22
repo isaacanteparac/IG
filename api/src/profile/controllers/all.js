@@ -4,7 +4,7 @@ const db = require("../../../database");
 all.get_ = async (req, res) => {
   try {
     const user = await db.query(
-      "SELECT id, name, lastname, nickname, email FROM users"
+      "SELECT id, name, lastname, nickname FROM users"
     );
     const publication = await db.query("SELECT * FROM post");
     const heart = await db.query("SELECT * FROM heart");
