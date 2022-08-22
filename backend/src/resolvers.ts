@@ -4,7 +4,7 @@ import typeDefinitions from "./typeDefinitions";
 
 const resolvers = {
     Query: {
-
+        personCount: () => {console.log("count")}
     }
 }
 

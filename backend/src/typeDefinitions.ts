@@ -7,6 +7,10 @@ const typeDefinitions = gql`
     email: String
     
   }
+
+  type Query {
+    usersCount: Int!
+  }
 `;
 
 export default typeDefinitions;
