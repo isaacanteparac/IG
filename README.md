@@ -1,6 +1,6 @@
 # ig
 
-**BACKEND**
+**API**
 
     npm init --yes
     "dependencies": {
@@ -22,6 +22,27 @@
         "nodemon": "^2.0.19"
     },
 
+**BACKEND**
+ 
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "tsc && nodemon && node dist/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+
+        "apollo-server": "^3.10.1",
+        "axios": "^0.27.2",
+        "graphql": "^16.6.0",
+        "ts-node": "^10.9.1",
+        "tslint": "^6.1.3",
+        "typescript": "^4.7.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+
+
 **FRONTEND**
     
     "npx create-react-app frontend"
@@ -34,10 +55,9 @@
 **RUN**
 
     api = npm run dev
-
     backend = {p1: npx tsc, p2: npm start}
-
     frontend = npm start
+
 **SCREENSHOT**
   ![Captura de pantalla (55)](https://user-images.githubusercontent.com/69361351/184448387-eb559572-c974-4b9e-b81b-94a79aa4822a.png)
 

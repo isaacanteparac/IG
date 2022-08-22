@@ -1,6 +1,6 @@
 import { gql } from "apollo-server";
 
-const typeDefinitions = gql`
+export const typeDefs = gql`
   type users {
     name: String!
     lastname: String!
@@ -13,4 +13,3 @@ const typeDefinitions = gql`
   }
 `;
 
-export default typeDefinitions;

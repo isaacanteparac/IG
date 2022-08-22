@@ -1,12 +1,14 @@
-import { gql } from "apollo-server";
 
-import typeDefinitions from "./typeDefinitions";
+const data = [
+  { id: 1, name: "Tom", lastname: "Coleman" },
+  { id: 2, name: "Sashko", lastname: "Stubailo" },
+  { id: 3, name: "Mikhail", lastname: "Novikov" },
+];
 
-const resolvers = {
-    Query: {
-        personCount: () => {console.log("count")}
-    }
-}
+export const resolvers = {
+  Query: {
 
+    usersCount : () => data.length ,
+  },
 
-export default resolvers;
+};
