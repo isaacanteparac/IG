@@ -19,6 +19,7 @@ export default function SingUp() {
     await sign_up(name, lastname, email, nickname, password);
   };
 
+
   return (
     <Form login onSubmit={createUser}>
       <ContentLeftColumn login>

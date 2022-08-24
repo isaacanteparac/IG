@@ -49,6 +49,12 @@ export const typeDefs = gql`
     delete_: String
   }
 
+  type Publication {
+    post: [Post]
+    comment: [Comment]
+    heart: [Heart]
+  }
+
   type All {
     user: [User]
     post: [Post]
@@ -59,5 +65,6 @@ export const typeDefs = gql`
 
   type Query {
     alldata: All
+    userProfilePublication (id_user: Int!): [Post]
   }
 `;
