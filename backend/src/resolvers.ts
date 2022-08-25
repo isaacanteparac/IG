@@ -1,6 +1,4 @@
 import axios from "axios";
-import IPost from "./interfaces/IPost";
-
 
 async function apiCall() {
   const url: string = "http://localhost:6660/i/all/";
@@ -16,8 +14,8 @@ export const resolvers = {
     alldata: () => data,
     userProfilePublication: async (root: any, args: any) => {
       const { id } = args;
-      const idUserPost = (args: { id: number }): IPost | undefined =>
-        data.find().then((u: any) => {u.id === id});
+        data.filter((u: any) => {
+          u.id === id}): Promise<Post[]>
     },
   },
 };
