@@ -12,10 +12,6 @@ const data = apiCall();
 export const resolvers = {
   Query: {
     alldata: () => data,
-    userProfilePublication: async (root: any, args: any) => {
-      const { id } = args;
-        data.filter((u: any) => {
-          u.id === id}): Promise<Post[]>
-    },
+
   },
 };

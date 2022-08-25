@@ -3,21 +3,15 @@ import { Field, ObjectType } from "type-graphql";
 @ObjectType()
 export default class User {
   @Field()
-  id: number;
+  id!: number;
 
   @Field()
-  lastname: string;
+  lastname!: string;
 
   @Field()
-  name: string;
+  name!: string;
 
   @Field()
-  nickname: string;
+  nickname!: string;
 
-  constructor(id: number, name: string, lastname: string, nickname: string) {
-    this.id = id;
-    this.name = name;
-    this.lastname = lastname;
-    this.nickname = nickname;
-  }
 }

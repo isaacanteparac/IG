@@ -1,6 +1,14 @@
+import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
-import { resolvers } from "./src/resolvers";
-import { typeDefs } from "./src/typeDefs";
+import { buildSchema } from "type-graphql";
+
+
+//TITLE: RESOLVERS
+import postResolvers from "./src/resolvers/post";
+
+
+
+
 
 const name = () => {
   console.clear();
@@ -11,8 +19,9 @@ const name = () => {
 
 const serverStart = async () => {
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema: await buildSchema({
+      resolvers: [postResolvers],
+    }),
   });
   await server
     .listen({
@@ -20,7 +29,6 @@ const serverStart = async () => {
     })
     .then(({ url }) => {
       name();
-
       console.log(`server ready at ${url}`);
     });
 };
