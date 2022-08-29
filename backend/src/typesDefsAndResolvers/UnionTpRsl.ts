@@ -1,6 +1,6 @@
 import { ObjectType, Field, Resolver, Query } from "type-graphql";
 
-import { data } from "../../index";
+import { dataApi } from "../../index";
 
 import Comment from "./Comment";
 import User from "./User";
@@ -25,8 +25,8 @@ export class UnionTypeDeft {
 @Resolver()
 export class UnionResolvers {
   @Query(() => [UnionTypeDeft])
-  async allData() {
-    const d = await data;
+  async all() {
+    const d = await dataApi;
     const getData: UnionTypeDeft[] = [];
     return await getData;
   }

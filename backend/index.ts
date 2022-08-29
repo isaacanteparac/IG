@@ -13,7 +13,6 @@ import {
   UnionTypeDeft,
   UnionResolvers,
 } from "./src/typesDefsAndResolvers/UnionTpRsl";
-import { print } from "graphql";
 
 async function apiCall() {
   const url: string = "http://localhost:6660/i/all/";
@@ -22,7 +21,7 @@ async function apiCall() {
   return res.data;
 }
 
-export const data = apiCall();
+export const dataApi = apiCall();
 
 const name = () => {
   //console.clear();
