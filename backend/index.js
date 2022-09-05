@@ -32,7 +32,8 @@ async function serverStart() {
     })
     .then(({ url }) => {
       name();
-      console.log(dataApi)
+      let a = apiCall()
+      console.log(`let apicall data = ${a}`)
       console.log(`server ready at ${url}`);
     });
 }
