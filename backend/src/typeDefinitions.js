@@ -1,12 +1,12 @@
 import { gql } from "apollo-server";
 
-export const typeDefs = gql`
+export const typeDefinitions = gql`
   type User {
     id: Int
     lastname: String
     name: String
     nickname: String
-    email:String
+    email: String
   }
 
   type Post {
@@ -64,7 +64,9 @@ export const typeDefs = gql`
   }
 
   type Query {
-    alldata: All
-    userProfilePublication (id_user: Int!): [Post]
+    alldata: [All]!
+    countPost: Int!
   }
 `;
+
+
