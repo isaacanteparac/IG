@@ -49,10 +49,9 @@ app.use(
 );
 app.use(morgan("dev"));
 
-//GLOBAL VARIABLES
+//GLOBAL VARIABLESzssd
 
-//ROUTES
-
+//ROUTES 
 app.use("/i/all", allData)
 app.use("/i/user/auth", userAuth);
 app.use("/i/feed", post);
@@ -66,7 +65,7 @@ app.use("/i/message", message);
 //STARTING THE SERVER
 async function main() {
   console.clear();
-  await app.listen(app.get("port"));
+   await app.listen(app.get("port"));
 
   console.log("█  █ █▀▀ █▀▀▄  ▀  █  █  ▀  █▀▄▀█ █▀▀");
   console.log("█▀▀█ █▀▀ █▀▀▄ ▀█▀ █▀▀█ ▀█▀ █ ▀ █ █▀▀");

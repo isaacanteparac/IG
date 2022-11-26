@@ -66,6 +66,7 @@ export const typeDefinitions = gql`
   type Query {
     alldata: [All]!
     countPost: Int!
+    name: String
   }
 `;
 
